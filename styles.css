@@ -1,11 +1,81 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+@font-face {
+  font-family: canopee;
+  src: url(./fonts/canopee.ttf);
 }
 
-html, body{
-    height: 100%;
-    width: 100%;
+@font-face {
+  font-family: domain;
+  src: url(./fonts/domaine.ttf);
 }
 
+@font-face {
+  font-family: editorial;
+  src: url(./fonts/editorial.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  /* background-color: #1d1d1b; */
+  overflow-x: hidden;
+}
+
+.paper-bg {
+  z-index: 998;
+  background-image: url(./assets/bg.jpg);
+  background-position: 50%;
+  background-size: auto;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  background-blend-mode: multiply;
+  background-color: #cdc6be;
+}
+
+.menu-line {
+  z-index: 2;
+  height: 1px;
+  opacity: 0.5;
+  position: absolute;
+  top: auto;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  overflow: hidden;
+  background-color: #1d1d1b;
+}
+
+nav {
+    position: relative;
+  display: flex;
+  height: 10vh;
+  width: 100vw;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4vh 2vw;
+  font-family: "editorial";
+  font-size: 1.8vh;
+  line-height: 2vh;
+}
+
+nav img {
+  width: 20vh;
+}
+
+@media screen and (max-width: 500px) {
+  nav {
+    justify-content: center;
+  }
+  .remove-from-mweb {
+    display: none;
+  }
+}
