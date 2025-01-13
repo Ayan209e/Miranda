@@ -23,24 +23,25 @@ html,
 body {
   height: 100%;
   width: 100%;
+  background-color: #1d1d1b;
+  font-family: "editorial";
 }
 
 main {
-  /* background-color: #1d1d1b; */
+  position: relative;
   overflow-x: hidden;
+  background-color: #cdc6be;
 }
 
 .paper-bg {
-  z-index: 998;
   background-image: url(./assets/bg.jpg);
   background-position: 50%;
   background-size: auto;
   mix-blend-mode: multiply;
-  pointer-events: none;
-  background-blend-mode: multiply;
   background-color: #cdc6be;
 }
 
+/* Navbar */
 .menu-line {
   z-index: 2;
   height: 1px;
@@ -55,7 +56,8 @@ main {
 }
 
 nav {
-    position: relative;
+  position: sticky;
+  top: 0;
   display: flex;
   height: 10vh;
   width: 100vw;
@@ -71,11 +73,147 @@ nav img {
   width: 20vh;
 }
 
-@media screen and (max-width: 500px) {
+/* Header */
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2vw 0;
+}
+
+.width-30 {
+  width: 30vw;
+}
+
+header .headline {
+  width: 28vw;
+  height: 100%;
+  text-align: center;
+  border-left: 1px solid rgba(29, 29, 27, 0.5);
+  border-right: 1px solid rgba(29, 29, 27, 0.5);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 3vw;
+  padding-right: 3vw;
+  position: relative;
+}
+
+header .head-title {
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  font-family: "canopee";
+  font-size: 4.5vw;
+  font-weight: 400;
+  line-height: 4.5vw;
+}
+
+header .head-desc {
+  text-align: center;
+  letter-spacing: -0.03em;
+  margin-top: 1vw;
+  font-size: 2.6vw;
+  line-height: 3vw;
+}
+
+header .header-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+
+/* For Desktop */
+@media screen and (min-width: 701px) {
+  header .header-item div {
+    width: 30vw;
+    overflow: hidden;
+    display: flex;
+  }
+}
+
+header .header-item-img-div {
+  height: 15vh;
+  width: 100%;
+}
+
+header .header-item-img-div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+header .header-item-name-img {
+  height: 2vh;
+  display: flex;
+}
+
+header .header-item-name-img img {
+  height: 100%;
+}
+
+header .new {
+  background-color: #c03f13;
+  color: #cdc6be;
+  font-family: "canopee";
+  font-size: 0.8em;
+  font-weight: 400;
+  line-height: 1.5vw;
+  border-radius: 0.2vw;
+  margin-left: 0.5vw;
+  padding: 0.1vw 0.25vw 0;
+  display: flex;
+  align-items: center;
+}
+
+header .header-item-desc {
+  max-width: 95%;
+  letter-spacing: -0.01em;
+  font-family: "editorial";
+  font-size: 1.2vw;
+  font-weight: 300;
+  line-height: 1.5vw;
+  color: #1d1d1b;
+}
+
+.mr {
+  margin-right: 3vw;
+}
+.ml {
+  margin-left: 3vw;
+}
+
+/* MWeb for Navbar & Header */
+@media screen and (max-width: 700px) {
   nav {
     justify-content: center;
   }
   .remove-from-mweb {
     display: none;
+  }
+  header {
+    flex-direction: column;
+  }
+  .mr,
+  .ml {
+    margin: 3vh 0;
+  }
+  .header-item,
+  .headline,
+  .width-30,
+  .header-item div,
+  .header-item-img-div {
+    width: 90vw;
+  }
+  header .new {
+    font-size: 1.2vh;
+    line-height: 1.5vh;
+    border-radius: 0.2vh;
+    margin-left: 0.5vh;
+    padding: 0.1vh 0.25vh;
+  }
+  header .header-item-desc {
+    font-size: 1.2vh;
+    line-height: 1.5vh;
   }
 }
