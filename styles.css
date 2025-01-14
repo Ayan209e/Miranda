@@ -97,6 +97,29 @@ header .headline {
   padding-left: 3vw;
   padding-right: 3vw;
   position: relative;
+  display: inline-block;
+}
+
+.animated-ellipse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 80px;
+  z-index: 0;
+  opacity: 0.5;
+  pointer-events: none; /* Ensures the SVG doesn't interfere with hover */
+}
+
+.animated-ellipse ellipse {
+  stroke-dasharray: 460; /* Total length of the ellipse perimeter */
+  stroke-dashoffset: 460; /* Fully hidden by default */
+  transition: stroke-dashoffset 0.5s ease-out; /* Smooth appearance */
+}
+
+.head-title:hover .animated-ellipse ellipse {
+  stroke-dashoffset: 0;
 }
 
 header .head-title {
@@ -106,6 +129,8 @@ header .head-title {
   font-size: 4.5vw;
   font-weight: 400;
   line-height: 4.5vw;
+  z-index: 1;
+  position: relative;
 }
 
 header .head-desc {
@@ -122,6 +147,10 @@ header .header-item {
   gap: 1vh;
 }
 
+.header-item:hover .header-item-img-div img {
+  scale: 1.1;
+}
+
 /* For Desktop */
 @media screen and (min-width: 701px) {
   header .header-item div {
@@ -132,8 +161,10 @@ header .header-item {
 }
 
 header .header-item-img-div {
-  height: 15vh;
+  height: 25vh;
   width: 100%;
+  border: 1px solid #1d1d1b;
+  overflow: hidden;
 }
 
 header .header-item-img-div img {
@@ -141,10 +172,11 @@ header .header-item-img-div img {
   height: 100%;
   object-fit: cover;
   object-position: center;
+  transition: all ease 0.5s;
 }
 
 header .header-item-name-img {
-  height: 2vh;
+  height: 3vh;
   display: flex;
 }
 
@@ -170,9 +202,9 @@ header .header-item-desc {
   max-width: 95%;
   letter-spacing: -0.01em;
   font-family: "editorial";
-  font-size: 1.2vw;
+  font-size: 1.1em;
   font-weight: 300;
-  line-height: 1.5vw;
+  line-height: 1.1em;
   color: #1d1d1b;
 }
 
@@ -183,7 +215,29 @@ header .header-item-desc {
   margin-left: 3vw;
 }
 
-/* MWeb for Navbar & Header */
+/* Miranda */
+.miranda {
+  color: #eae6e1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #1d1d1b;
+  font-size: calc(35vw - 2rem); 
+  font-family: "canopee";
+  padding: 5vh 2vw;
+  line-height: 0.9;
+  box-sizing: border-box; 
+  overflow: hidden; 
+}
+
+.miranda div {
+  width: 100%;
+  background-color: #1d1d1b;
+  white-space: nowrap; 
+}
+
+/* MWeb for Navbar, Header & Miranda */
 @media screen and (max-width: 700px) {
   nav {
     justify-content: center;
@@ -213,7 +267,16 @@ header .header-item-desc {
     padding: 0.1vh 0.25vh;
   }
   header .header-item-desc {
-    font-size: 1.2vh;
-    line-height: 1.5vh;
+    font-size: 1.5vh;
+    line-height: 1.8vh;
   }
+  header .header-item-img-div {
+    height: 15vh;
+  }
+  .miranda {
+    padding: 2vh 2vw;
+    }
 }
+
+
+
