@@ -223,18 +223,19 @@ header .header-item-desc {
   align-items: center;
   text-align: center;
   background-color: #1d1d1b;
-  font-size: calc(35vw - 2rem); 
+  font-size: calc(35vw - 2rem);
   font-family: "canopee";
   padding: 5vh 2vw;
+  padding-top: 1vh;
   line-height: 0.9;
-  box-sizing: border-box; 
-  overflow: hidden; 
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .miranda div {
   width: 100%;
   background-color: #1d1d1b;
-  white-space: nowrap; 
+  white-space: nowrap;
 }
 
 /* MWeb for Navbar, Header & Miranda */
@@ -275,8 +276,222 @@ header .header-item-desc {
   }
   .miranda {
     padding: 2vh 2vw;
-    }
+  }
 }
 
+/* Hero */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5vh 2vw;
+  padding-top: 1vh;
+}
 
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3vh 6vw;
+  width: 100%;
+  position: relative;
+}
 
+.grid-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #1d1d1b;
+  color: #eae6e1;
+  font-family: "editorial";
+  font-size: 1.5rem;
+  padding: 1rem;
+  border: 1px solid #cdc6be;
+  border-radius: 8px;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.grid-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(33.3333% + 1vw);
+  width: 1px;
+  background-color: rgba(29, 29, 27, 0.5);
+  z-index: 1;
+}
+
+.grid-item:hover {
+  background-color: #cdc6be;
+  color: #1d1d1b;
+  transform: scale(1.05);
+}
+
+.left-column {
+  display: grid;
+}
+
+.left-column > div {
+  display: flex;
+}
+
+.rich-text-block {
+  position: relative;
+}
+
+.h-head.s-1 {
+  font-size: 8vw;
+}
+
+.h-head {
+  position: relative;
+  font-size: 14vw;
+  line-height: 0.8em;
+}
+
+.hero h2 {
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  font-family: "canopee";
+  font-weight: 400;
+}
+
+.f-span {
+  letter-spacing: -0.02em;
+  font-family: "domaine";
+  font-weight: 500;
+}
+
+.strike-under {
+  width: 100%;
+  height: 2px;
+  opacity: 0.3;
+  background-color: #1d1d1b;
+  position: absolute;
+  bottom: 25%;
+}
+
+.left-middle {
+  border: 1px solid #1d1d1b;
+  margin-bottom: 3vh;
+}
+
+.left-middle img {
+  width: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.has-dropcap {
+  font-size: 2.1vw;
+  line-height: 1.2em;
+  text-align: left;
+  font-weight: 300;
+}
+
+.has-dropcap:first-letter {
+  font-family: "canopee";
+  font-feature-settings: "ss03";
+  float: left;
+  font-size: 6.5vw;
+  line-height: 0.7em;
+  margin: 0.7vw 1vw 1vw 0vw;
+  background-color: #1d1d1b;
+  color: #cdc6be;
+  padding: 0.75vw 0.4vw 0.5vw 0.5vw;
+}
+
+@media (max-width: 479px) {
+  .has-dropcap {
+    font-size: 6vw;
+    line-height: 7.5vw;
+    letter-spacing: -0.02em;
+  }
+
+  .has-dropcap:first-letter {
+    font-size: 20vw;
+    line-height: 17vw;
+    margin: 1vw 2vw 1vw 0vw;
+    padding: 1.5vw 0.8vw 0.5vw 1vw;
+  }
+}
+
+.right-column {
+  display: grid;
+  gap: 7vh;
+}
+
+.right-column > div {
+  display: flex;
+}
+
+.right-top {
+  border: 1px solid #1d1d1b;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.right-top img {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.under {
+  text-decoration: underline;
+  text-underline-offset: 0.3vw;
+  text-decoration-thickness: 0.5px;
+  text-decoration-color: #0000007a;
+}
+
+.right-column .h-head {
+  line-height: 1em;
+  font-size: 7vw;
+}
+
+@media screen and (max-width: 700px) {
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+  }
+
+  .grid-container::before {
+    display: none;
+  }
+
+  .left-column,
+  .right-column {
+    width: 100%;
+  }
+
+  .left-top {
+    margin-top: 8vw;
+  }
+
+  .left-column > div,
+  .right-column > div {
+    width: 100%;
+  }
+  .rich-text-block {
+    display: flex;
+    width: 100%;
+    gap: 3vw;
+  }
+  .h-head.s-1,
+  .h-head {
+    font-size: 16vw;
+  }
+  .left-middle {
+    margin-top: 7vw;
+    margin-bottom: 5vw;
+  }
+  .right-column .h-head {
+    font-size: 13vw;
+  }
+  .right-column {
+    gap: 5vw;
+  }
+}
