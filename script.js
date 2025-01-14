@@ -11,14 +11,13 @@ tl.to("main", {
   duration: 0,
 });
 tl.to("main", {
-  y: "10vh",
+  y: "-30vh",
   duration: 1,
-  delay: 1,
 });
 tl.to("main", {
   y: "0vh",
   rotate: -360,
   scale: 1,
   delay: 0.4,
-  duration: 1.2,
+  duration: 0.7,
 });
