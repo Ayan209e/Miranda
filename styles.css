@@ -105,16 +105,16 @@ header .headline {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 300px;
-  height: 80px;
+  width: 17vw;
+  height: 17vh;
   z-index: 0;
   opacity: 0.5;
-  pointer-events: none; /* Ensures the SVG doesn't interfere with hover */
+  pointer-events: none;
 }
 
 .animated-ellipse ellipse {
-  stroke-dasharray: 460; /* Total length of the ellipse perimeter */
-  stroke-dashoffset: 460; /* Fully hidden by default */
+  stroke-dasharray: 700; /* Total length of the ellipse perimeter */
+  stroke-dashoffset: 700; /* Fully hidden by default */
   transition: stroke-dashoffset 0.5s ease-out; /* Smooth appearance */
 }
 
@@ -496,13 +496,13 @@ header .header-item-desc {
 }
 
 /* Website */
-.website-headline{
+.website-headline {
   display: flex;
   gap: 3vh;
   padding: 5vh 2vw;
 }
 
-.website{
+.website {
   color: #eae6e1;
   display: flex;
   justify-content: center;
@@ -519,19 +519,301 @@ header .header-item-desc {
   white-space: nowrap;
 }
 
-.stamp{
+.stamp {
   width: 20%;
 }
 
-.stamp img{
+.stamp img {
   height: 100%;
   width: 100%;
   overflow: hidden;
 }
 
-@media screen and (max-width:700px) {
-  .website-headline{
+@media screen and (max-width: 700px) {
+  .website-headline {
     padding: 1vh 2vw;
     padding-top: 0;
+  }
+}
+
+/* Works */
+.works {
+  display: flex;
+  padding: 1vh 2vw;
+  gap: 6vw;
+  position: relative;
+}
+
+.works::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: calc(40% + 1vw);
+  width: 1px;
+  background-color: rgba(29, 29, 27, 0.5);
+  z-index: 1;
+}
+
+.works .left-section {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  gap: 3vh;
+}
+
+.works .left-section .content {
+  display: flex;
+  gap: 4vw;
+  position: relative;
+}
+
+.works .left-section .upcoming-head {
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  font-family: "canopee";
+  font-size: 4.5vw;
+  font-weight: 400;
+  line-height: 4.5vw;
+}
+
+.upcoming-head .dom {
+  font-family: "domaine";
+  font-weight: 500;
+  display: inline-block;
+}
+
+.works .upcoming-desc {
+  font-family: "editorial";
+  text-align: left;
+  font-size: 2.6vw;
+  line-height: 3vw;
+  letter-spacing: -0.03em;
+}
+
+.works .unexpected {
+  gap: 0vh;
+}
+
+.works .unexpected .unexpected-image {
+  width: 95%;
+  height: 50%;
+  overflow: hidden;
+}
+
+.works .unexpected .unexpected-image img {
+  width: 100%;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.unexpected:hover .unexpected-image img {
+  scale: 1.1;
+  overflow: hidden;
+}
+
+.unexpected-content .head {
+  font-family: "canopee";
+  text-transform: capitalize;
+  font-size: 2vw;
+  margin-top: 1vh;
+}
+
+.unexpected-content .desc {
+  max-width: 95%;
+  letter-spacing: -0.01em;
+  margin-top: 1vw;
+  font-family: "editorial";
+  font-size: 1.2vw;
+  font-weight: 300;
+  line-height: 1.5vw;
+}
+
+.works .left-section .content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: calc(50%);
+  width: 1px;
+  background-color: rgba(29, 29, 27, 0.5);
+  z-index: 1;
+}
+
+.upcoming,
+.unexpected {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+.left-section .image {
+  width: 100%;
+}
+
+.left-section .image img {
+  width: 100%;
+  overflow: hidden;
+  height: 120%;
+}
+
+.works .right-section {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  gap: 3vh;
+  font-family: "canopee";
+}
+
+.works h2 {
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  font-family: "canopee";
+  font-weight: 400;
+}
+
+.works .sub {
+  font-size: 16vw;
+}
+
+.works .has-dropcap {
+  font-family: "editorial";
+  font-size: 2.25vw;
+  line-height: 2.7vw;
+}
+
+.works .h5.h3 {
+  letter-spacing: -0.02em;
+  text-transform: none;
+  font-family: "editorial";
+  font-weight: 300;
+}
+
+.works .h5 {
+  font-size: 2.25vw;
+  line-height: 2.7vw;
+}
+
+.works .all-work {
+  width: 100%;
+  height: 13vw;
+  display: flex;
+  flex: 0 auto;
+  overflow: hidden;
+  border: 1px solid rgba(29, 29, 27, 0.5);
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.works .all-work-text {
+  text-transform: uppercase;
+  font-size: 6vw;
+  line-height: 6vw;
+  letter-spacing: -0.04em;
+  font-family: "canopee";
+  font-weight: 400;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+.works .all-work-arrow {
+  position: absolute;
+  width: 10vw;
+  opacity: 0;
+  transform: translateX(-250%);
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+.works .all-work:hover .all-work-text {
+  transform: translateX(200%);
+  opacity: 0;
+}
+
+.works .all-work:hover .all-work-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media screen and (max-width: 700px) {
+  .works{
+    flex-direction: column;
+    width: 100%;
+    gap: 2vh;
+  }
+  .works::before {
+    display: none;
+  }
+  .works .left-section,.works .right-section{
+    width: 100%;
+    gap: 2vh;
+  }
+  .works .left-section .upcoming-head{
+    font-size: 8vw;
+    line-height: 8vw;
+    padding-top: 2vw;
+  }
+  .works .upcoming-desc {
+    font-size: 4.6vw;
+    line-height: 5vw;
+    letter-spacing: -0.03em;
+  }
+  .unexpected-content .head {
+    font-size: 5vw;
+    margin-top: 1vh;
+  }
+  .unexpected-content .desc {
+    margin-top: 1vw;
+    font-size: 2.5vw;
+    line-height: 2.5vw;
+  }
+
+  .works .right-section{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: repeat(2, auto); 
+    gap: 3vh;
+  }
+
+  .rich-text-block{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1vh;
+    padding-right: 1vh;
+    border-bottom: 1px solid #1d1d1b;
+    border-right: 1px solid #1d1d1b;
+  }
+
+  .works .h-head.s-1, .h-head{
+    font-size: 10vw;
+  }
+
+  .works .sub{
+    font-size: 20vw;
+  }
+  
+  .works .has-dropcap {
+    font-size: 4.25vw;
+    line-height: 4.7vw;
+  }
+
+  .works .has-dropcap:first-letter {
+    font-size: 12vw;
+    margin: 1.7vw 1vw 1vw 0vw;
+    padding: 1.75vw 1vw 1vw 1.5vw;
+  }
+  
+  .works .h5 {
+    font-size: 3.25vw;
+    line-height: 3.7vw;
+  }
+
+  .works .all-work{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
   }
 }
