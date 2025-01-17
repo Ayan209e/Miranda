@@ -85,7 +85,7 @@ header {
   width: 30vw;
 }
 
-header .headline {
+.headline {
   width: 28vw;
   height: 100%;
   text-align: center;
@@ -122,7 +122,7 @@ header .headline {
   stroke-dashoffset: 0;
 }
 
-header .head-title {
+.head-title {
   letter-spacing: -0.05em;
   text-transform: uppercase;
   font-family: "canopee";
@@ -133,15 +133,14 @@ header .head-title {
   position: relative;
 }
 
-header .head-desc {
+.head-desc {
   text-align: center;
   letter-spacing: -0.03em;
   margin-top: 1vw;
   font-size: 2.6vw;
   line-height: 3vw;
 }
-
-header .header-item {
+.header-item {
   display: flex;
   flex-direction: column;
   gap: 1vh;
@@ -153,21 +152,21 @@ header .header-item {
 
 /* For Desktop */
 @media screen and (min-width: 701px) {
-  header .header-item div {
+  .header-item div {
     width: 30vw;
     overflow: hidden;
     display: flex;
   }
 }
 
-header .header-item-img-div {
+.header-item-img-div {
   height: 25vh;
   width: 100%;
   border: 1px solid #1d1d1b;
   overflow: hidden;
 }
 
-header .header-item-img-div img {
+.header-item-img-div img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -175,16 +174,16 @@ header .header-item-img-div img {
   transition: all ease 0.5s;
 }
 
-header .header-item-name-img {
+.header-item-name-img {
   height: 3vh;
   display: flex;
 }
 
-header .header-item-name-img img {
+.header-item-name-img img {
   height: 100%;
 }
 
-header .new {
+.new {
   background-color: #c03f13;
   color: #cdc6be;
   font-family: "canopee";
@@ -198,7 +197,7 @@ header .new {
   align-items: center;
 }
 
-header .header-item-desc {
+.header-item-desc {
   max-width: 95%;
   letter-spacing: -0.01em;
   font-family: "editorial";
@@ -260,18 +259,18 @@ header .header-item-desc {
   .header-item-img-div {
     width: 90vw;
   }
-  header .new {
+  .new {
     font-size: 1.2vh;
     line-height: 1.5vh;
     border-radius: 0.2vh;
     margin-left: 0.5vh;
     padding: 0.1vh 0.25vh;
   }
-  header .header-item-desc {
+  .header-item-desc {
     font-size: 1.5vh;
     line-height: 1.8vh;
   }
-  header .header-item-img-div {
+  .header-item-img-div {
     height: 15vh;
   }
   .miranda {
@@ -1136,4 +1135,149 @@ header .header-item-desc {
 
 #box3:hover ~ #box4 {
   transform: translateX(30%);
+}
+
+/* Bottom Works */
+.bottom-works {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2vw 0;
+  padding-top: 3vw;
+  position: relative;
+}
+
+.bottom-works .top-border {
+  position: absolute;
+  top: 0;
+  right: 2vw;
+  left: 2vw;
+  height: 1px;
+  background-color: #1d1d1b;
+}
+
+@media screen and (max-width: 700px) {
+  .bottom-works {
+    flex-direction: column;
+  }
+}
+
+/* Bottom Animated CTA */
+.cta-wrapper {
+  padding: 2vw;
+  overflow: hidden;
+  padding-top: 0;
+}
+.cta {
+  padding: 1vw;
+  width: 100%;
+  border-top: 1px solid #1b1b1b;
+  border-bottom: 1px solid #1b1b1b;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.cta::-webkit-scrollbar {
+  display: none;
+}
+
+.cta h1 {
+  font-size: 6vw;
+  font-family: "domaine";
+  font-weight: 100;
+  display: inline-block;
+  animation-timing-function: linear;
+  margin-right: 30px;
+  animation-name: scroll;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+.cta h1 span {
+  font-family: "canopee";
+  background-color: #1b1b1b;
+  color: #eae6e1;
+  padding: 0 12px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - 34px));
+  }
+}
+
+.cta:hover h1 {
+  animation-play-state: paused;
+}
+
+/* Footer */
+footer {
+  padding: 2vw;
+  padding-top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1%;
+}
+
+.stamp {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  font-family: "canopee";
+  font-size: 1.6vw;
+  font-weight: 400;
+  line-height: 1.3vw;
+}
+
+.stamp-image {
+  height: 24px;
+  overflow: hidden;
+}
+.stamp-image img {
+  height: 100%;
+  width: 100%;
+}
+
+.legal {
+  font-size: 1.3vw;
+  line-height: 1.4vw;
+  font-family: "editorial";
+  text-transform: capitalize;
+  margin-top: 1%;
+}
+
+.socials {
+  text-transform: uppercase;
+  font-family: "canopee";
+  font-size: 1.6vw;
+  font-weight: 400;
+  line-height: 1.6vw;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.socials span{
+  font-family: 'domaine';
+}
+
+.dot{
+  font-size: 3vw;
+}
+
+@media screen and (max-width:700px) {
+  footer{
+    flex-direction: column-reverse;
+  }
+  .stamp, .socials{
+    font-size: 3vw;
+    line-height: 3.1vw;
+  }
 }
