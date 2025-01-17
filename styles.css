@@ -28,9 +28,18 @@ body {
 }
 
 main {
+  height: 100%;
   position: relative;
   overflow-x: hidden;
   background-color: #cdc6be;
+}
+
+main {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+main::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
 }
 
 .paper-bg {
@@ -56,17 +65,15 @@ main {
 }
 
 nav {
-  position: sticky;
-  top: 0;
   display: flex;
   height: 10vh;
-  width: 100vw;
   justify-content: space-between;
   align-items: center;
   padding: 4vh 2vw;
   font-family: "editorial";
   font-size: 1.8vh;
   line-height: 2vh;
+  position: relative;
 }
 
 nav img {
@@ -216,7 +223,7 @@ header {
 
 /* Miranda */
 .miranda {
-  color: #eae6e1;
+  color: #e0dbd3;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -300,7 +307,7 @@ header {
   align-items: center;
   text-align: center;
   background-color: #1d1d1b;
-  color: #eae6e1;
+  color: #e0dbd3;
   font-family: "editorial";
   font-size: 1.5rem;
   padding: 1rem;
@@ -505,7 +512,7 @@ header {
 }
 
 .website {
-  color: #eae6e1;
+  color: #e0dbd3;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -972,7 +979,7 @@ header {
 
 .artisan {
   font-family: "canopee";
-  color: #cdc6be;
+  color: #e0dbd3;
   letter-spacing: -0.045em;
   background-color: #1d1d1b;
   padding: 0 3vw;
@@ -1013,7 +1020,7 @@ header {
 .testimonial-wrapper {
   width: 40vw;
   height: 27vw;
-  background-color: #eae6e1;
+  background-color: #e0dbd3;
   border: 2.5px solid #000;
   border-radius: 0.8vw;
   padding: 1vw;
@@ -1264,19 +1271,20 @@ footer {
   gap: 5px;
 }
 
-.socials span{
-  font-family: 'domaine';
+.socials span {
+  font-family: "domaine";
 }
 
-.dot{
+.dot {
   font-size: 3vw;
 }
 
-@media screen and (max-width:700px) {
-  footer{
+@media screen and (max-width: 700px) {
+  footer {
     flex-direction: column-reverse;
   }
-  .stamp, .socials{
+  .stamp,
+  .socials {
     font-size: 3vw;
     line-height: 3.1vw;
   }
