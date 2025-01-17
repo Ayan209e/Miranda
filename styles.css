@@ -1003,3 +1003,137 @@ header .header-item-desc {
   text-transform: uppercase;
   padding-top: 2%;
 }
+
+/* Testimonials */
+.testimonials {
+  padding: 2vw;
+  position: relative;
+  height: 32vw;
+}
+
+.testimonial-wrapper {
+  width: 40vw;
+  height: 27vw;
+  background-color: #eae6e1;
+  border: 2.5px solid #000;
+  border-radius: 0.8vw;
+  padding: 1vw;
+  transition: all ease 0.5s;
+}
+
+.testimonial {
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  display: flex;
+  position: relative;
+  padding: 2vw;
+}
+
+.testimonial-desc {
+  text-decoration: underline;
+  text-underline-offset: 0.3vw;
+  text-decoration-thickness: 0.5px;
+  text-decoration-color: #0000007a;
+  letter-spacing: -0.03em;
+  flex: 0 auto;
+  font-size: 2.2vw;
+  line-height: 2.8vw;
+  display: block;
+  font-family: "editorial";
+}
+
+.testimonial-src {
+  display: flex;
+  gap: 5px;
+}
+
+.test-image {
+  width: 3vw;
+  height: 3vw;
+  border: 1px solid #1d1d1b;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.testimonials img {
+  height: 100%;
+  width: 100%;
+}
+
+.test-name {
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  margin-bottom: 0.2vw;
+  font-family: Canopee, sans-serif;
+  font-size: 2.2vw;
+  font-weight: 400;
+  line-height: 2vw;
+}
+
+.test-name span {
+  font-family: "domaine";
+}
+
+.test-desc {
+  letter-spacing: -0.01em;
+  font-size: 1.4vw;
+  line-height: 1.3vw;
+  font-family: "editorial";
+}
+
+.test-desc span {
+  text-decoration: underline;
+}
+
+.dash {
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='8' ry='8' stroke='%23333' stroke-width='2.5' stroke-dasharray='11%2c11' stroke-dashoffset='30' stroke-linecap='square'/%3e%3c/svg%3e");
+}
+
+#box1 {
+  position: absolute;
+  top: 2vw;
+  left: 2vw;
+}
+
+#box2 {
+  position: absolute;
+  top: 2vw;
+  left: 20%;
+}
+
+#box3 {
+  position: absolute;
+  top: 2vw;
+  left: 38%;
+}
+
+#box4 {
+  position: absolute;
+  top: 2vw;
+  left: 57%;
+}
+
+#box1:hover ~ #box2 {
+  transform: translateX(50%);
+}
+
+#box1:hover ~ #box3 {
+  transform: translateX(30%);
+}
+
+#box2:hover {
+  transform: translateX(-20%);
+}
+
+#box2:hover ~ #box3 {
+  transform: translateX(30%);
+}
+
+#box3:hover {
+  transform: translateX(-20%);
+}
+
+#box3:hover ~ #box4 {
+  transform: translateX(30%);
+}
